@@ -37,6 +37,7 @@ const Row = ({ title, media_type = "movie", genre: genre }) => {
     }
   };
 
+  // eslint-disable-next-line @typescript-eslint/no-empty-function
   useEffect(() => {}, [slideNumber]);
 
   useEffect(() => {
@@ -64,6 +65,7 @@ const Row = ({ title, media_type = "movie", genre: genre }) => {
     };
     fetchData();
 
+    // eslint-disable-next-line @typescript-eslint/no-empty-function
     return () => {};
   }, []);
 
