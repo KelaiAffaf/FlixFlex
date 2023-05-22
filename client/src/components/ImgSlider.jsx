@@ -2,48 +2,96 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import styled from "styled-components";
-
+import { Link, useNavigate } from "react-router-dom";
 const ImgSlider = () => {
+  const navigate = useNavigate();
   return (
-    <div>
-      <Carousel
-        dots={true}
-        infinite={true}
-        speed={500}
-        slidesToShow={1}
-        slidesToScroll={1}
-        autoplay={true}
+ 
+  <div
+  style={{
+    position: "relative",
+    height: "100vh", // Set the height to 100% of the viewport height
+    backgroundImage: `url("/images/mena-background-desktop.webp")`,
+    backgroundSize: "cover",
+    backgroundRepeat: "no-repeat",
+    backgroundPosition: "center",
+    display:"flex",
+    flexDirection:"column",
+    alignItems: "center",
+    justifyContent:"center"
+  }}
+>
+
+      <div
+      style={{
+        position: "absolute",
+        top:"40%",
+        display:"flex",
+        flexDirection:"column",
+        alignItems: "center",
+      }}
       >
-        <Wrap>
-          <a>
-            <img src="/images/slider-badging.jpg" alt="" />
-          </a>
-        </Wrap>
+      <Logo>
+        <img
+          src="/images/logo.svg"
+          alt="Disney+"
+          onClick={() => navigate("/")}
+        />
+        
+      </Logo>
+     <div style={{
+      // width:"500px",
+      display:"flex",
+      flexDirection:"column",
+      alignItems: "center",
+      justifyContent:"center"
+      }}>
+     <h2>
+       Stream Disney+ Originals, latest series & blockbuster movies
+      </h2>
+     </div> 
+     <button 
+     style={{
+      background: `linear-gradient(93.87deg, #095ae6, #062794)`,
+      display: "inline-block",
+      padding: "10px 20px",
+      color: "white",
+      border: "none",
+      borderRadius: "4px",
+      fontSize: "16px",
+      cursor: "pointer",
+      "&:hover": {
+        backgroundColor: "#095ae6",
+      },
+      "&:focus": {
+        outline: "none",
+        boxShadow: "0 0 0 3px rgba(0, 0, 0, 0.2)",
+      },
+     }}
+     onClick={() => navigate("/login")}>
+      Sign up
+     </button>
 
-        <Wrap>
-          <a>
-            <img src="/images/slider-scale.jpg" alt="" />
-          </a>
-        </Wrap>
-
-        <Wrap>
-          <a>
-            <img src="/images/slider-badag.jpg" alt="" />
-          </a>
-        </Wrap>
-
-        <Wrap>
-          <a>
-            <img src="/images/slider-scales.jpg" alt="" />
-          </a>
-        </Wrap>
-      </Carousel>
-    </div>
+      </div>
+      </div>
   );
 };
 
 export default ImgSlider;
-
+const Logo = styled.a`
+  padding: 0;
+  width: 220px;
+  margin-top: 4px;
+  max-height: 210px;
+  font-size: 0;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  img {
+    display: block;
+    width: 100%;
+  }
+`;
 const Carousel = styled(Slider)`
   padding: 0 50px;
   margin-top: 20px;
