@@ -38,7 +38,7 @@ const Header = () => {
           </Link>
           <Link to="/myWatchlist" onClick={() => setShowMenu(false)}>
             <img src="/images/watchlist-icon.svg" alt="WATCHLIST" />
-            <span>FAVORIT</span>
+            <span>FAVORITES</span>
           </Link>
           <Link to="/movies" onClick={() => setShowMenu(false)}>
             <img src="/images/movie-icon.svg" alt="MOVIES" />

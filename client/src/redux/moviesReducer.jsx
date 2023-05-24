@@ -63,6 +63,7 @@ export const addtoLikedMovies = createAsyncThunk(
       email,
       movieData 
     });
+    console.log({movies})
     return movies.payload;
   }
 );

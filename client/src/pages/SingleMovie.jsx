@@ -141,7 +141,7 @@ const SingleMovie = () => {
                       }}
                     />
                   )}
-                  <span>Watchlist</span>
+                  <span>Favorites List</span>
                 </div>
                 <div className="iconCont2 share">
                   <ShareRounded className="icon" />

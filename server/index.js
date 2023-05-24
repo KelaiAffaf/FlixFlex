@@ -17,8 +17,8 @@ app.use(express.urlencoded({ limit: "30mb", extended: true }));
 import UserRoute from "./routes/userRoute.js";
 app.use("/user", UserRoute);
 
-const MONGO_URL = "mongodb://127.0.0.1:27017/flexMovie";
-
+// const MONGO_URL = "mongodb://127.0.0.1:27017/flexMovie";
+const MONGO_URL ="mongodb+srv://afafkelly:96itVx7VzeOAY8YW@cluster0.f18vt0b.mongodb.net/?retryWrites=true&w=majority"
 const connectDb = async () => {
   try {
     await mongoose.connect(MONGO_URL, {

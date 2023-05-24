@@ -7,7 +7,7 @@ const Watch = () => {
   return (
     <Container>
       <div className="back">
-        <ArrowBackOutlined onclick={() => navigate(-1)}/>
+        <ArrowBackOutlined onClick={() => navigate(-1)}/>
         Home
       </div>
       <video 

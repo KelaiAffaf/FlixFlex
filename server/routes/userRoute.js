@@ -187,7 +187,7 @@ router.get("/find/:id", verify, getUser)
   *         description: User not found or no liked movies
   */
  
- router.get("/likedMovies/:email", verify, fetchLikedMovies);
+ router.get("/likedMovies/:email", fetchLikedMovies);
  
  /**
   * @swagger

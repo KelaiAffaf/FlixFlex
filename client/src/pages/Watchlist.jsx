@@ -33,14 +33,14 @@ const WatchList = () => {
   return (
     <Container>
     {isLoading && <LoadingSpinner />}
-      <h1>My WatchList</h1>
+      <h1>My Favorites</h1>
       <div className="rows">
         {movies?.map((movie, index) => {
           return <RowItem movieData={movie} index={index} key={movie.id} />;
         })}
         {noLikedMovies && (
           <div className="noMovies">
-            <h6>No Movies added to the Favlist</h6>
+            <h6>No Movies added to the favorite List </h6>
           </div>
         )}
       </div>
