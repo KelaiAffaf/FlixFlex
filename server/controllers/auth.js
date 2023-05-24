@@ -6,6 +6,7 @@ import jwt from "jsonwebtoken";
 export const registerUser = async (req, res) => {
   const { userName, email, password } = req.body;
   const isUserExist = await User.findOne({ email });
+  console.log({isUserExist})
   if (!isUserExist) {
     const salt = await bcrypt.genSaltSync(10);
     const hashedPasssword = await bcrypt.hashSync(password, salt);
