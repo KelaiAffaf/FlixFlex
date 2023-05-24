@@ -6,7 +6,7 @@ export const publicRequest = axios.create({
     baseURL: baseUrl
 })
 
-const userRequestbaseUrl = 'flix-flex.vercel.app'
+const userRequestbaseUrl = 'http://localhost:3333'
 
 export const userPublicRequest = axios.create({
     baseURL: userRequestbaseUrl,
