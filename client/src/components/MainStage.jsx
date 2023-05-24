@@ -3,7 +3,7 @@ import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import styled from "styled-components";
 import { Link, useNavigate } from "react-router-dom";
-const ImgSlider = () => {
+const MainStage = () => {
   const navigate = useNavigate();
   return (
  
@@ -50,34 +50,14 @@ const ImgSlider = () => {
        Stream Disney+ Originals, latest series & blockbuster movies
       </h2>
      </div> 
-     <button 
-     style={{
-      background: `linear-gradient(93.87deg, #095ae6, #062794)`,
-      display: "inline-block",
-      padding: "10px 20px",
-      color: "white",
-      border: "none",
-      borderRadius: "4px",
-      fontSize: "16px",
-      cursor: "pointer",
-      "&:hover": {
-        backgroundColor: "#095ae6",
-      },
-      "&:focus": {
-        outline: "none",
-        boxShadow: "0 0 0 3px rgba(0, 0, 0, 0.2)",
-      },
-     }}
-     onClick={() => navigate("/login")}>
-      Sign up
-     </button>
+  
 
       </div>
       </div>
   );
 };
 
-export default ImgSlider;
+export default MainStage;
 const Logo = styled.a`
   padding: 0;
   width: 220px;

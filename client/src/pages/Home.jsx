@@ -1,12 +1,12 @@
 import styled from "styled-components";
-import ImgSlider from "../components/ImgSlider";
+import MainStage from "../components/MainStage";
 import Rows from "../components/Rows";
 import Viewer from "../components/Viewer";
 
 const Home = () => {
   return (
     <Container>
-      <ImgSlider />
+      <MainStage />
       <Viewer />
       <Rows />
     </Container>
