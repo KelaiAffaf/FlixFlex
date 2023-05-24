@@ -59,6 +59,7 @@ const SingleMovie = () => {
     fetchMedia();
     movieData?.seasons ? settype("movie") : settype("tv");
     window.scrollTo(0, 0);
+    // eslint-disable-next-line @typescript-eslint/no-empty-function
     return () => {};
   }, [location]);
 
