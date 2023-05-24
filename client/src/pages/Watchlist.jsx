@@ -40,7 +40,7 @@ const WatchList = () => {
         })}
         {noLikedMovies && (
           <div className="noMovies">
-            <h6>No Movies added to the watchlist</h6>
+            <h6>No Movies added to the Favlist</h6>
           </div>
         )}
       </div>
