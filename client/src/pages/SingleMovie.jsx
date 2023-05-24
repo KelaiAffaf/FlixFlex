@@ -143,6 +143,7 @@ const SingleMovie = () => {
                   )}
                   <span>Favorites List</span>
                 </div>
+                {/* TODO : add share inshallah :p  */}
                 <div className="iconCont2 share">
                   <ShareRounded className="icon" />
                   <span>Share</span>
