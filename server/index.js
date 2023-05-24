@@ -2,6 +2,8 @@ import express from "express";
 import mongoose from "mongoose";
 import dotenv from "dotenv";
 import cors from "cors";
+import swaggerUi from "swagger-ui-express";
+import swaggerJsdoc from "swagger-jsdoc";
 
 dotenv.config();
 
@@ -36,12 +38,46 @@ const connectDb = async () => {
 
 connectDb();
 
-// if (process.env.NODE_ENV === "production") {
-//   app.use(express.static("frontend/dist"));
-//   app.get("*", (req, res) => {
-//     res.sendFile("/frontend/dist");
-//   });
-// }
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static("client/dist"));
+  app.get("*", (req, res) => {
+    res.sendFile("../client/dist");
+  });
+}
+
+const options = {
+  definition: {
+    openapi: "3.0.0",
+    info: {
+      title: "Flix Flex Express API with Swagger",
+      version: "0.1.0",
+      description:
+        " CRUD API application made with Express and documented with Swagger for the movie App Flix flex",
+      license: {
+        name: "MIT",
+        url: "https://spdx.org/licenses/MIT.html",
+      },
+      contact: {
+        name: "LogRocket",
+        url: "https://logrocket.com",
+        email: "afafkelly@gmail.com",
+      },
+    },
+    servers: [
+      {
+        url: "http://localhost:3000",
+      },
+    ],
+  },
+  apis: ["./routes/*.js"],
+};
+
+const specs = swaggerJsdoc(options);
+app.use(
+  "/api-docs",
+  swaggerUi.serve,
+  swaggerUi.setup(specs)
+);
 
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);
