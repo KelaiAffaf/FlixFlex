@@ -6,13 +6,15 @@ import { signOut } from "../redux/userRedux";
 import { sign_Out } from "../redux/moviesReducer";
 import { Menu } from "@mui/icons-material";
 import { useState } from "react";
+import NiceModal from "@ebay/nice-modal-react";
+import { Avatar } from "@mui/material";
 const Header = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const user = useSelector((state) => state.user?.currentUser?.user);
-  const photo = false;
+  const photo = true;
   const [showMenu, setShowMenu] = useState(false);
-
+  const image ="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2787&q=80"
   return (
     <Nav>
       <Logo>
@@ -52,9 +54,31 @@ const Header = () => {
         {user ? (
           photo ? (
             <SignOut>
-              <UserImg src="" alt="" />
-              <DropDown>
-                <span>Sign out</span>
+              <AvatarContainer
+                onClick={() => NiceModal.show("AVATAR_MODAL", { image })}
+              >
+                <Avatar
+                  src={image}
+                  sx={{
+                    width: "48px",
+                    height: "48px",
+                    border: "4px solid transparent",
+
+                    "&:hover": {
+                      borderColor: "grey",
+                    },
+                  }}
+                />
+             </AvatarContainer>
+             <DropDown>
+                <span
+                  onClick={() => {
+                    dispatch(signOut());
+                    dispatch(sign_Out());
+                  }}
+                >
+                  Sign out
+                </span>
               </DropDown>
             </SignOut>
           ) : (
@@ -79,6 +103,16 @@ const Header = () => {
     </Nav>
   );
 };
+
+const AvatarContainer = styled.div`
+  width: 48px;
+  height: 48px;
+  cursor: pointer;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
 
 const Nav = styled.nav`
   position: fixed;

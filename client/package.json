@@ -10,11 +10,12 @@
         "preview": "vite preview"
     },
     "dependencies": {
+        "@ebay/nice-modal-react": "^1.2.10",
         "@emotion/react": "^11.11.0",
         "@emotion/styled": "^11.11.0",
         "@material-ui/system": "^4.12.2",
         "@mui/icons-material": "^5.11.16",
-        "@mui/material": "^5.13.1",
+        "@mui/material": "^5.13.2",
         "@reduxjs/toolkit": "^1.9.5",
         "axios": "^1.4.0",
         "framer-motion": "^10.12.12",
