@@ -41,7 +41,7 @@ connectDb();
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/dist"));
   app.get("*", (req, res) => {
-    const indexPath = path.join(__dirname, '../client/dist', 'index.html');
+    const indexPath = path.join(__dirname, '../client/dist/index.html');
     res.sendFile(indexPath);
   });
 }
