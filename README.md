@@ -1,5 +1,6 @@
 # FlixFlex MERN APP
 
+## Technologies used :
 ### Frontend
 - Reactjs 
 - React-router-dom
@@ -20,5 +21,8 @@
 
  #Run Project : cd client && yarn run dev ==> client will run 
  cd server && npm i ==> server will start ==> both server and db will be runnng and connected 
-# Swagger API
+### Swagger API
 ## [http://localhost:3333/api-docs/]([http://localhost:3333/api-docs/])
+
+#TODO
+-deployement on vercel 
