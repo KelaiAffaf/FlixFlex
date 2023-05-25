@@ -50,7 +50,7 @@ const Footer = () => {
           <span>SERIES</span>
         </Link>
       </NavMenu>
-      <p>&copy; 2023 Kamesh Rajput | All Rights Reserved</p>
+      
     </Container>
   );
 };
