@@ -21,7 +21,7 @@ app.use("/user", UserRoute);
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
-
+// todo : use .env instead
 const MONGO_URL = "mongodb+srv://afafkelly:96itVx7VzeOAY8YW@cluster0.f18vt0b.mongodb.net/?retryWrites=true&w=majority";
 const connectDb = async () => {
   try {
