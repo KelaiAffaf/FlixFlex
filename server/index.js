@@ -4,7 +4,9 @@ import dotenv from "dotenv";
 import cors from "cors";
 import swaggerUi from "swagger-ui-express";
 import swaggerJsdoc from "swagger-jsdoc";
-const path = require('path');
+import { fileURLToPath } from 'url';
+import { dirname, join } from 'path';
+
 dotenv.config();
 
 const port = 3333;
@@ -17,8 +19,10 @@ app.use(express.urlencoded({ limit: "30mb", extended: true }));
 import UserRoute from "./routes/userRoute.js";
 app.use("/user", UserRoute);
 
-// const MONGO_URL = "mongodb://127.0.0.1:27017/flexMovie";
-const MONGO_URL ="mongodb+srv://afafkelly:96itVx7VzeOAY8YW@cluster0.f18vt0b.mongodb.net/?retryWrites=true&w=majority"
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
+const MONGO_URL = "mongodb+srv://afafkelly:96itVx7VzeOAY8YW@cluster0.f18vt0b.mongodb.net/?retryWrites=true&w=majority";
 const connectDb = async () => {
   try {
     await mongoose.connect(MONGO_URL, {
@@ -29,19 +33,17 @@ const connectDb = async () => {
     console.log(`MongoDB connected: ${mongoose.connection.host}`);
   } catch (error) {
     console.log(error);
-    // Handle the error here, such as displaying an error message or taking appropriate action
-    // For example, you can use `process.exit(1)` to terminate the Node.js process with a non-zero exit code
     process.exit(1);
   }
 };
 
-
 connectDb();
 
 if (process.env.NODE_ENV === "production") {
-  app.use(express.static("client/dist"));
+  const staticPath = join(__dirname, '../client/dist');
+  app.use(express.static(staticPath));
   app.get("*", (req, res) => {
-    const indexPath = path.join(__dirname, '../client/dist/index.html');
+    const indexPath = join(staticPath, 'index.html');
     res.sendFile(indexPath);
   });
 }
@@ -53,7 +55,7 @@ const options = {
       title: "Flix Flex Express API with Swagger",
       version: "0.1.0",
       description:
-        " CRUD API application made with Express and documented with Swagger for the movie App Flix flex",
+        "CRUD API application made with Express and documented with Swagger for the movie App Flix flex",
       license: {
         name: "MIT",
         url: "https://spdx.org/licenses/MIT.html",
