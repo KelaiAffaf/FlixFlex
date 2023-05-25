@@ -1,5 +1,5 @@
 # FlixFlex MERN APP
-
+this design is inspired from disney+ website : [https://www.apps.disneyplus.com/dz/onboarding?utm_campaign=Backlink%2CBacklink&utm_content=Homepage_Navigation%2CHomepage_Navigation&utm_medium=Disney_WebsiteMENA%2CDisney_WebsiteMENA&utm_source=Referral]
 ## Technologies used :
 ### Frontend
 - Reactjs 
