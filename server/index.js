@@ -4,7 +4,7 @@ import dotenv from "dotenv";
 import cors from "cors";
 import swaggerUi from "swagger-ui-express";
 import swaggerJsdoc from "swagger-jsdoc";
-
+const path = require('path');
 dotenv.config();
 
 const port = 3333;
@@ -41,7 +41,8 @@ connectDb();
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/dist"));
   app.get("*", (req, res) => {
-    res.sendFile("../client/dist");
+    const indexPath = path.join(__dirname, '../client/dist', 'index.html');
+    res.sendFile(indexPath);
   });
 }
 
