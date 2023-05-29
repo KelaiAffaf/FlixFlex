@@ -25,4 +25,4 @@ this design is inspired from disney+ website : [https://www.apps.disneyplus.com/
 ## [http://localhost:3333/api-docs/]([http://localhost:3333/api-docs/])
 
 #TODO
--deployement on vercel 
+[-deployement on vercel ](https://flix-flex.vercel.app/)
