@@ -23,6 +23,5 @@ this design is inspired from disney+ website : [https://www.apps.disneyplus.com/
  cd server && npm i ==> server will start ==> both server and db will be runnng and connected 
 ### Swagger API
 ## [http://localhost:3333/api-docs/]([http://localhost:3333/api-docs/])
-
-#TODO
+[API deployment](https://flixflex-api.onrender.com/live)
 [-deployement on vercel ](https://flix-flex.vercel.app/)
